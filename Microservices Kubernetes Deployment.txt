@@ -1,0 +1,136 @@
+Microservices Kubernetes Deployment Assessment (Link)
+Total Marks: 50
+Time Limit: 1 hour
+
+Objective
+Deploy a microservices application on Kubernetes using Minikube, ensuring proper service communication and configuration.
+
+Application Components
+You are provided with four containerized Node.js microservices:
+
+User Service (Port 3000)
+
+Product Service (Port 3001)
+
+Order Service (Port 3002)
+
+Gateway Service (Port 3003)
+
+Task Requirements
+1. Basic Kubernetes Deployment (30 marks)
+A. Create Kubernetes Deployment manifests for all services (18 marks)
+User Service deployment
+
+Product Service deployment
+
+Order Service deployment
+
+Gateway Service deployment  (includes additional proxy handling setup if required)
+
+Each deployment must include:
+
+Correct container image reference
+
+Resource limits and requests
+
+Environment variables
+
+Liveness and readiness probes
+
+Proper labels and selectors
+
+      B. Create corresponding Service resources (12 marks)
+Configure correct ports
+
+Choose proper service types
+
+Enable cluster-level service discovery using ClusterIP
+
+
+2. Minikube Setup and Validation (15 marks)
+Initialize and configure Minikube 
+
+Deploy all components successfully 
+
+Validate inter-service communication using curl or logs 
+
+3. Documentation and Testing (5 marks)
+Provide a well-structured README.md with:
+
+Minikube setup steps
+
+Deployment process using kubectl apply -f
+
+Service testing instructions using kubectl port-forward or direct service names
+
+Troubleshooting tips
+
+Include screenshots of:
+
+Running pods (kubectl get pods)
+
+Logs showing service communication
+
+Any port-forwarded test results
+
+
+Bonus Task: Ingress Configuration (Optional)
+If you complete the main tasks early, you may choose to implement ingress as a bonus.
+
+Enable Ingress controller on Minikube
+
+
+Create Ingress resource with routing rules 
+
+Configure paths:
+
+
+/api/users → User Service
+
+
+/api/products → Product Service
+
+
+/api/orders → Order Service
+
+
+/ → Gateway Service
+
+
+Apply host-based rules and path mapping
+
+
+Deliverables
+Submit a ZIP file named submission.zip with the following structure:
+
+submission/
+├── deployments/
+│   ├── user-service.yaml
+│   ├── product-service.yaml
+│   ├── order-service.yaml
+│   └── gateway-service.yaml
+├── services/
+│   ├── user-service.yaml
+│   ├── product-service.yaml
+│   ├── order-service.yaml
+│   └── gateway-service.yaml
+├── ingress/              # Only if Bonus Task is attempted
+│   └── ingress.yaml
+├── screenshots/
+│   ├── pods.png
+│   ├── logs.png
+│   └── service-test.png
+└── README.md
+
+
+Evaluation Criteria
+
+Functionality: Services should be running and discoverable
+
+Configuration: Use of correct Kubernetes specs and features
+
+Documentation: Clear, complete, and easy-to-follow steps\
+
+Testing: Proper service connectivity and communication
+
+Bonus: Ingress works with correct routes (optional)
